@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+
 }
 
 body {
@@ -13,27 +14,83 @@ body {
 
 
 .header {
-    height: 80px;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
     background-color: #a19f9f;
+    position: relative;
 }
 
 .main {
     display: flex;
     flex: 1;
+
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 15px;
+    gap: 15px;
+
+}
+
+.moon {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 10px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-20px, 60px);
+}
+.moon::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     background-color: #141414;
 }
 
-.aside {
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree::before {
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #148d38;
+}
+
+.tree::after {
+    content: "";
+    height: 3rem;
+    width: 0.75rem;
+    background-color: #7c5f00;
+}
+
+.control-panel {
     width: 75px;
     background-color: #141414;
     color: #fff;
-    padding: 10px;
+
     border-right: 3px #bdb9b9 solid;
 }
 .footer {
     display: flex;
     background-color: #555151;
-    height: 100px;
+    height: 90px;
     align-items: center;
     gap: 5px;
     border-top: 3px #bdb9b9 solid;
