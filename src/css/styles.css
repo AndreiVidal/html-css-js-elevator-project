@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+
+
 }
 
 body {
@@ -9,34 +11,221 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
 
-
-.header {
-    height: 80px;
-    background-color: #a19f9f;
 }
 
 .main {
     display: flex;
     flex: 1;
+
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 15px;
+    padding-top: 10px;
+    gap: 15px;
+
+}
+
+.moon {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 10px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-20px, 60px);
+}
+.moon::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     background-color: #141414;
 }
 
-.aside {
-    width: 75px;
-    background-color: #141414;
-    color: #fff;
-    padding: 10px;
-    border-right: 3px #bdb9b9 solid;
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.tree::before {
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #148d38;
+}
+
+.tree::after {
+    content: "";
+    height: 3rem;
+    width: 0.75rem;
+    background-color: #7c5f00;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 150px;
+    height: auto;
+    background-color: #bbb4b4d5;
+    border: 1px #bdb9b9 solid;
+    border-radius: 10px;
+    margin: 30px;
+    box-shadow: 2px 2px 6px #d6d5d5a4;
+    padding: 10px;
+}
+
+.display-panel {
+    width: 70%;
+    height: 30px;
+    background-color: #11f011c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px #131212 solid;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.control-buttons button {
+    width: 50px;
+    height: 50px;
+    background-color: #f7f7f7;
+    border: 1px #bdb9b9 solid;
+    border-radius: 5px;
+}
+
+
+button.highlighted {
+    border: 3px solid #eff143;
+}
+
+.structure {
+    display: flex;
+    background-color: #5b5e5d;
+    width: 500px;
+    height: 100%;
+    gap: 5px;
+    border: 1px #830a0ab9 solid;
+    border-bottom: 0;
+
+}
+
+.building {
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    background-color: #0a0a0a6c;
+
+}
+
+.building-elevator {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    background-color: #fdfdfd73;
+}
+
+.elevator {
+    position: absolute;
+    bottom: 0;
+    height: 77px;
+    width: 80%;
+    background-color: #f7f7f72c; 
+    border: 2px solid #1b1b1ba6;
+    border-top: 4px solid #1b1b1ba6;
+
+}
+
+.floor {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+    border-bottom: 2px #bdb9b9 solid;
+}
+
+.door {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height: 70%;
+    background-color: #6e5203;
+    border: 2px solid #e7161679;
+    border-bottom: 0;
+    padding-left: 5px;
+}
+
+.door::after {
+    content: "";
+    width: 20%;
+    height: 10%;
+    background-color: #14120ca9;
+    border-radius: 10px;
+}
+.lobby {
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: #eb101054;
+    border-bottom: 2px solid transparent;
+}
+
+.window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 35%;
+    height: 65%;
+    border: 2px solid #0a0a0aec;
+}
+
+.window::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border: 1px solid #0a0a0a50;
+}
+
+.window::before {
+    content:"";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 1px solid #0a0a0a50;
+}
+
 .footer {
     display: flex;
     background-color: #555151;
-    height: 100px;
+    height: 75px;
     align-items: center;
     gap: 5px;
-    border-top: 3px #bdb9b9 solid;
+    border-top: 2px #bdb9b9 solid;
 }
 
 .footer .lane{
