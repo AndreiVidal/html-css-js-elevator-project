@@ -1,236 +1,335 @@
+:root {
+    /* Cores principais */
+    --bg-body: #141414;
+    --bg-moon: #f7f7f7;
+    --bg-tree: #148d38;
+    --bg-tree-trunk: #7c5f00;
+    --bg-panel: #bbb4b4d5;
+    --bg-elevator: #f7f7f72c;
+    --bg-lobby: #eb101054;
+    --bg-street: #555151;
+    --bg-window: #068888b3;
+    --bg-highlight: #eff143;
+
+    /* Bordas e sombras */
+    --border-default: #bdb9b9;
+    --border-dark: #1b1b1ba6;
+    --shadow-default: 2px 2px 6px #d6d5d5a4;
+
+    /* Tamanhos */
+    --structure-width: 500px;
+    --moon-size: 80px;
+    --tree-size: 4rem;
+}
+
+/* Reset e base */
 * {
     box-sizing: border-box;
-
-
+    margin: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #141414;
+    background-color: var(--bg-body);
     display: flex;
     flex-direction: column;
     height: 100vh;
-
 }
 
+/* Layout principal */
 .main {
     display: flex;
     flex: 1;
-
+    position: relative;
 }
 
 .content {
+    align-items: flex-end;
     display: flex;
     flex: 1;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: 0 15px;
-    padding-top: 10px;
     gap: 15px;
-
+    justify-content: space-around;
+    padding: 10px 15px 0;
 }
 
+/* Elementos visuais */
 .moon {
+    background-color: var(--bg-moon);
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
-    background-color: #f7f7f7;
-    height:80px;
-    width: 80px;
-    border-radius: 50%;
-    margin: 10px 10px;
+    height: var(--moon-size);
+    margin: 10px;
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
     transform: translate(-20px, 60px);
+    width: var(--moon-size);
 }
+
 .moon::before {
-    content: "";
-    width: 70px;
-    height: 70px;
+    background-color: var(--bg-body);
     border-radius: 50%;
-    background-color: #141414;
+    content: "";
+    height: 70px;
+    width: 70px;
 }
 
 .tree {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex-shrink: 0;
 }
 
 .tree::before {
-    content: "";
-    width: 4rem;
-    height: 4rem;
+    background-color: var(--bg-tree);
     border-radius: 50%;
-    background-color: #148d38;
+    content: "";
+    height: var(--tree-size);
+    width: var(--tree-size);
 }
 
 .tree::after {
+    background-color: var(--bg-tree-trunk);
     content: "";
     height: 3rem;
     width: 0.75rem;
-    background-color: #7c5f00;
 }
 
+/* Painel de controle */
 .control-panel {
+    align-items: center;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    box-shadow: var(--shadow-default);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 30px;
+    padding: 10px;
     position: absolute;
     width: 150px;
-    height: auto;
-    background-color: #bbb4b4d5;
-    border: 1px #bdb9b9 solid;
-    border-radius: 10px;
-    margin: 30px;
-    box-shadow: 2px 2px 6px #d6d5d5a4;
-    padding: 10px;
 }
 
 .display-panel {
-    width: 70%;
-    height: 30px;
-    background-color: #11f011c9;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: #11f011c9;
+    border: 1px solid #131212;
     border-radius: 5px;
-    border: 1px #131212 solid;
+    display: flex;
+    font-size: 1.2rem;
+    height: 30px;
+    justify-content: center;
+    width: 70%;
 }
 
 .control-buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 15px;
+    grid-template-columns: 1fr 1fr;
     margin-top: 10px;
 }
 
 .control-buttons button {
-    width: 50px;
-    height: 50px;
-    background-color: #f7f7f7;
-    border: 1px #bdb9b9 solid;
+    border: 1px solid var(--border-default);
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 50px;
+    width: 50px;
 }
-
 
 button.highlighted {
-    border: 3px solid #eff143;
+    border: 3px solid var(--bg-highlight);
 }
 
+/* Prédio  */
 .structure {
-    display: flex;
     background-color: #5b5e5d;
-    width: 500px;
-    height: 100%;
-    gap: 5px;
-    border: 1px #830a0ab9 solid;
+    border: 1px solid #830a0ab9;
     border-bottom: 0;
-
+    display: flex;
+    gap: 5px;
+    height: 100%;
+    width: var(--structure-width);
 }
 
 .building {
-    display: flex;
-    flex-direction: column;
-    flex:2;
     background-color: #0a0a0a6c;
-
+    display: flex;
+    flex: 2;
+    flex-direction: column;
 }
 
 .building-elevator {
-    position: relative;
+    background-color: #fdfdfd73;
     display: flex;
     flex: 1;
     justify-content: center;
-    background-color: #fdfdfd73;
+    position: relative;
 }
 
 .elevator {
-    position: absolute;
+    background-color: var(--bg-elevator);
+    border: 2px solid var(--border-dark);
+    border-top: 4px solid var(--border-dark);
     bottom: 0;
-    height: 77px;
+    height: calc(100% / 7);
+    position: absolute;
     width: 80%;
-    background-color: #f7f7f72c; 
-    border: 2px solid #1b1b1ba6;
-    border-top: 4px solid #1b1b1ba6;
-
 }
 
 .floor {
+    align-items: flex-end;
+    border-bottom: 2px solid var(--border-default);
     display: flex;
     flex: 1;
-    align-items: flex-end;
     justify-content: center;
-    border-bottom: 2px #bdb9b9 solid;
 }
 
 .door {
-    display: flex;
     align-items: center;
-    width: 25%;
-    height: 70%;
     background-color: #6e5203;
     border: 2px solid #e7161679;
     border-bottom: 0;
+    display: flex;
+    height: 70%;
     padding-left: 5px;
+    width: 25%;
 }
 
 .door::after {
-    content: "";
-    width: 20%;
-    height: 10%;
     background-color: #14120ca9;
     border-radius: 10px;
+    content: "";
+    height: 10%;
+    width: 20%;
 }
-.lobby {
 
+.lobby {
+    align-items: center;
+    background-color: var(--bg-lobby);
+    border-bottom: 2px solid transparent;
     display: flex;
     flex: 1;
-    align-items: center;
     justify-content: center;
-    background-color: #eb101054;
-    border-bottom: 2px solid transparent;
 }
 
 .window {
-    display: flex;
     align-items: center;
+    background-color: var(--bg-window);
+    border: 2px solid #0a0a0aec;
+    display: flex;
+    height: 65%;
     justify-content: center;
     position: relative;
     width: 35%;
-    height: 65%;
-    border: 2px solid #0a0a0aec;
+}
+
+.window::after,
+.window::before {
+    content: "";
+    border: 1px solid #0a0a0a50;
+    position: absolute;
 }
 
 .window::after {
-    content:"";
-    position: absolute;
-    top: 0;
     height: 100%;
-    border: 1px solid #0a0a0a50;
+    top: 0;
 }
 
 .window::before {
-    content:"";
-    position: absolute;
     left: 0;
     width: 100%;
-    border: 1px solid #0a0a0a50;
 }
 
-.footer {
-    display: flex;
-    background-color: #555151;
-    height: 75px;
+/* Rua */
+.street {
     align-items: center;
+    background-color: var(--bg-street);
+    border-top: 2px solid var(--border-default);
+    display: flex;
     gap: 5px;
-    border-top: 2px #bdb9b9 solid;
+    height: 75px;
 }
 
-.footer .lane{
-    flex: 1;
+.street .lanes {
+    background-color: var(--bg-moon);
     display: flex;
-    background-color: #f7f7f7;
+    flex: 1;
     height: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 890px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 70px;
+    }
+
+    .content {
+        align-items: flex-end;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        padding: 80px 10px 0;
+    }
+
+    .structure {
+        height: 80vh;
+        margin: 0 auto;
+        max-width: 400px;
+        order: 2;
+        width: 60%;
+    }
+
+    .tree {
+        flex: 1;
+        max-width: 20%;
+    }
+
+    .tree:first-child {
+        order: 1;
+    }
+
+    .tree:last-child {
+        order: 3;
+    }
+
+    .main {
+        justify-content: center;
+    }
+
+    .control-panel {
+        bottom: 0;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        margin: auto;
+        position: fixed;
+        width: 90%;
+    }
+
+    .display-panel {
+        width: 60%;
+    }
+
+    .control-buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .control-buttons button {
+        height: 40px;
+        width: 100%;
+    }
+
+    .moon {
+        top: -35px;
+        transform: translate(-20px, 60px);
+    }
 }
