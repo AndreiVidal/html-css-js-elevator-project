@@ -1,335 +1,289 @@
 :root {
-    /* Cores principais */
-    --bg-body: #141414;
-    --bg-moon: #f7f7f7;
-    --bg-tree: #148d38;
-    --bg-tree-trunk: #7c5f00;
-    --bg-panel: #bbb4b4d5;
-    --bg-elevator: #f7f7f72c;
-    --bg-lobby: #eb101054;
-    --bg-street: #555151;
-    --bg-window: #068888b3;
-    --bg-highlight: #eff143;
+  /* === Cores globais === */
+  --bg-body: #141414;
+  --border-default: #bdb9b9;
+  --border-dark: #1b1b1ba6;
+  --shadow-default: 2px 2px 6px #d6d5d5a4;
+  --bg-highlight: #eff143;
 
-    /* Bordas e sombras */
-    --border-default: #bdb9b9;
-    --border-dark: #1b1b1ba6;
-    --shadow-default: 2px 2px 6px #d6d5d5a4;
+  /* === Lua === */
+  --bg-moon: #f7f7f7;
 
-    /* Tamanhos */
-    --structure-width: 500px;
-    --moon-size: 80px;
-    --tree-size: 4rem;
+  /* === Árvore === */
+  --bg-tree: #148d38;
+  --bg-tree-trunk: #7c5f00;
+
+  /* === Painel de Controle === */
+  --bg-panel: #bbb4b4d5;
+  --bg-display-panel: #11f011c9;
+
+  /* === Prédio === */
+  --bg-structure: #5b5e5d;
+  --border-structure: #830a0ab9;
+  --structure-width: 500px;
+
+  /* === Edifício Interno === */
+  --bg-building: #08034938;
+  --bg-building-elevator: #fdfdfd73;
+
+  /* === Elevador === */
+  --bg-elevator: #f7f7f72c;
+
+  /* === Andar / Porta === */
+  --bg-door: #6e5203;
+  --border-door: #e7161679;
+  --bg-door-knob: #14120ca9;
+
+  /* === Lobby === */
+  --bg-lobby: #eb101054;
+
+  /* === Janela === */
+  --bg-window: #068888b3;
+  --border-window-lines: #0a0a0a50;
+
+  /* === Rua === */
+  --bg-street: #555151;
+
+  /* === Tamanhos === */
+  --moon-size: 80px;
+  --tree-size: 4rem;
 }
+
 
 /* Reset e base */
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    background-color: var(--bg-body);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* Layout principal */
 .main {
-    display: flex;
-    flex: 1;
-    position: relative;
+  display: flex;
+  flex: 1;
+  position: relative;
 }
 
 .content {
-    align-items: flex-end;
-    display: flex;
-    flex: 1;
-    gap: 15px;
-    justify-content: space-around;
-    padding: 10px 15px 0;
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  gap: 15px;
+  justify-content: space-around;
+  padding: 10px 15px 0;
 }
 
 /* Elementos visuais */
 .moon {
-    background-color: var(--bg-moon);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    height: var(--moon-size);
-    margin: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(-20px, 60px);
-    width: var(--moon-size);
+  background-color: var(--bg-moon);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: var(--moon-size);
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-20px, 60px);
+  width: var(--moon-size);
 }
 
 .moon::before {
-    background-color: var(--bg-body);
-    border-radius: 50%;
-    content: "";
-    height: 70px;
-    width: 70px;
+  background-color: var(--bg-body);
+  border-radius: 50%;
+  content: "";
+  height: 70px;
+  width: 70px;
 }
 
 .tree {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .tree::before {
-    background-color: var(--bg-tree);
-    border-radius: 50%;
-    content: "";
-    height: var(--tree-size);
-    width: var(--tree-size);
+  background-color: var(--bg-tree);
+  border-radius: 50%;
+  content: "";
+  height: var(--tree-size);
+  width: var(--tree-size);
 }
 
 .tree::after {
-    background-color: var(--bg-tree-trunk);
-    content: "";
-    height: 3rem;
-    width: 0.75rem;
+  background-color: var(--bg-tree-trunk);
+  content: "";
+  height: 3rem;
+  width: 0.75rem;
 }
 
 /* Painel de controle */
 .control-panel {
-    align-items: center;
-    background-color: var(--bg-panel);
-    border: 1px solid var(--border-default);
-    border-radius: 10px;
-    box-shadow: var(--shadow-default);
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-    padding: 10px;
-    position: absolute;
-    width: 150px;
+  align-items: center;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  box-shadow: var(--shadow-default);
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  padding: 10px;
+  position: absolute;
+  width: 150px;
 }
 
 .display-panel {
-    align-items: center;
-    background-color: #11f011c9;
-    border: 1px solid #131212;
-    border-radius: 5px;
-    display: flex;
-    font-size: 1.2rem;
-    height: 30px;
-    justify-content: center;
-    width: 70%;
+  align-items: center;
+  background-color: var(--bg-display-panel);
+  border: 1px solid var(--border-dark);
+  border-radius: 5px;
+  display: flex;
+  font-size: 1.2rem;
+  height: 30px;
+  justify-content: center;
+  width: 70%;
 }
 
 .control-buttons {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 10px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
 }
 
 .control-buttons button {
-    border: 1px solid var(--border-default);
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    height: 50px;
-    width: 50px;
+  border: 1px solid var(--border-default);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 50px;
 }
 
 button.highlighted {
-    border: 3px solid var(--bg-highlight);
+  border: 3px solid var(--bg-highlight);
 }
 
 /* Prédio  */
 .structure {
-    background-color: #5b5e5d;
-    border: 1px solid #830a0ab9;
-    border-bottom: 0;
-    display: flex;
-    gap: 5px;
-    height: 100%;
-    width: var(--structure-width);
+  background-color: var(--bg-structure);
+  border: 1px solid var(--border-structure);
+  border-bottom: 0;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  width: var(--structure-width);
 }
 
 .building {
-    background-color: #0a0a0a6c;
-    display: flex;
-    flex: 2;
-    flex-direction: column;
+  background-color: var(--bg-building);
+  display: flex;
+  flex: 2;
+  flex-direction: column;
 }
 
 .building-elevator {
-    background-color: #fdfdfd73;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    position: relative;
+  background-color: var(--bg-building-elevator);
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
 }
 
 .elevator {
-    background-color: var(--bg-elevator);
-    border: 2px solid var(--border-dark);
-    border-top: 4px solid var(--border-dark);
-    bottom: 0;
-    height: calc(100% / 7);
-    position: absolute;
-    width: 80%;
+  background-color: var(--bg-elevator);
+  border: 2px solid var(--border-dark);
+  border-top: 4px solid var(--border-dark);
+  bottom: 0;
+  height: calc(100% / 7);
+  position: absolute;
+  width: 80%;
 }
 
 .floor {
-    align-items: flex-end;
-    border-bottom: 2px solid var(--border-default);
-    display: flex;
-    flex: 1;
-    justify-content: center;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--border-default);
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 .door {
-    align-items: center;
-    background-color: #6e5203;
-    border: 2px solid #e7161679;
-    border-bottom: 0;
-    display: flex;
-    height: 70%;
-    padding-left: 5px;
-    width: 25%;
+  align-items: center;
+  background-color: var(--bg-door);
+  border: 2px solid var(--border-door);
+  border-bottom: 0;
+  display: flex;
+  height: 70%;
+  padding-left: 5px;
+  width: 25%;
 }
 
 .door::after {
-    background-color: #14120ca9;
-    border-radius: 10px;
-    content: "";
-    height: 10%;
-    width: 20%;
+  background-color: var(--bg-door-knob);
+  border-radius: 10px;
+  content: "";
+  height: 10%;
+  width: 20%;
 }
 
 .lobby {
-    align-items: center;
-    background-color: var(--bg-lobby);
-    border-bottom: 2px solid transparent;
-    display: flex;
-    flex: 1;
-    justify-content: center;
+  align-items: center;
+  background-color: var(--bg-lobby);
+  border-bottom: 2px solid transparent;
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 .window {
-    align-items: center;
-    background-color: var(--bg-window);
-    border: 2px solid #0a0a0aec;
-    display: flex;
-    height: 65%;
-    justify-content: center;
-    position: relative;
-    width: 35%;
+  align-items: center;
+  background-color: var(--bg-window);
+  border: 2px solid var(--border-dark);
+  display: flex;
+  height: 65%;
+  justify-content: center;
+  position: relative;
+  width: 35%;
 }
 
 .window::after,
 .window::before {
-    content: "";
-    border: 1px solid #0a0a0a50;
-    position: absolute;
+  content: "";
+  border: 1px solid var(--border-window-lines);
+  position: absolute;
 }
 
 .window::after {
-    height: 100%;
-    top: 0;
+  height: 100%;
+  top: 0;
 }
 
 .window::before {
-    left: 0;
-    width: 100%;
+  left: 0;
+  width: 100%;
 }
 
 /* Rua */
 .street {
-    align-items: center;
-    background-color: var(--bg-street);
-    border-top: 2px solid var(--border-default);
-    display: flex;
-    gap: 5px;
-    height: 75px;
+  align-items: center;
+  background-color: var(--bg-street);
+  border-top: 2px solid var(--border-default);
+  display: flex;
+  gap: 5px;
+  height: 75px;
 }
 
-.street .lanes {
-    background-color: var(--bg-moon);
-    display: flex;
-    flex: 1;
-    height: 10px;
-}
-
-/* Responsividade */
-@media screen and (max-width: 890px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 70px;
-    }
-
-    .content {
-        align-items: flex-end;
-        flex-direction: row;
-        gap: 5px;
-        justify-content: space-between;
-        padding: 80px 10px 0;
-    }
-
-    .structure {
-        height: 80vh;
-        margin: 0 auto;
-        max-width: 400px;
-        order: 2;
-        width: 60%;
-    }
-
-    .tree {
-        flex: 1;
-        max-width: 20%;
-    }
-
-    .tree:first-child {
-        order: 1;
-    }
-
-    .tree:last-child {
-        order: 3;
-    }
-
-    .main {
-        justify-content: center;
-    }
-
-    .control-panel {
-        bottom: 0;
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
-        margin: auto;
-        position: fixed;
-        width: 90%;
-    }
-
-    .display-panel {
-        width: 60%;
-    }
-
-    .control-buttons {
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 10px;
-        margin-top: 0;
-        width: 100%;
-    }
-
-    .control-buttons button {
-        height: 40px;
-        width: 100%;
-    }
-
-    .moon {
-        top: -35px;
-        transform: translate(-20px, 60px);
-    }
+.street > .lane {
+  background-color: var(--bg-moon);
+  display: flex;
+  flex: 1;
+  height: 10px;
 }
