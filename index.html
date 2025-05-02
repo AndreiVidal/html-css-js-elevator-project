@@ -1,89 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elevators</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <script src="./src/js/street.js" defer></script>
+  </head>
+  <body>
     <div class="main">
-        <div class="control-panel">
-            <div class="display-panel">TÉRREO</div>
-            <div class="control-buttons">
-                <button>6</button>
-                <button>5</button>
-                <button>4</button>
-                <button>3</button>
-                <button class="highlighted">2</button>
-                <button>1</button>
-                <button>T</button>
-            </div>
+      <div class="control-panel">
+        <div class="display-panel">TÉRREO</div>
+        <div class="control-buttons">
+          <button>6</button>
+          <button>5</button>
+          <button>4</button>
+          <button>3</button>
+          <button class="highlighted">2</button>
+          <button>1</button>
+          <button>T</button>
         </div>
-        <div class="content">
-            <div class="tree"></div>
-            <div class="structure">
-                <div class="building">
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="lobby">
-                        <div class="window"></div>
-                    </div>
-                </div>
-                <div class="building-elevator">
-                    <div class="elevator"></div>
-                </div>
-                <div class="building">
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="floor">
-                        <div class="door"></div>
-                    </div>
-                    <div class="lobby">
-                        <div class="window"></div>
-                    </div>
-                </div>
+      </div>
+      <div class="content">
+        <div class="tree"></div>
+        <div class="structure">
+          <div class="building">
+            <div class="floor">
+              <div class="door"></div>
             </div>
-            <div class="tree"></div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="lobby">
+              <div class="window"></div>
+            </div>
+          </div>
+          <div class="building-elevator">
+            <div class="elevator"></div>
+          </div>
+          <div class="building">
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="floor">
+              <div class="door"></div>
+            </div>
+            <div class="lobby">
+              <div class="window"></div>
+            </div>
+          </div>
         </div>
-        <div class="moon"></div>
+        <div class="tree"></div>
+      </div>
+      <div class="moon"></div>
     </div>
-    <div class="footer">
-        <span class="lane"></span>
-        <span class="lane"></span>
-        <span class="lane"></span>
-        <span class="lane"></span>
-        <span class="lane"></span>
-        <span class="lane"></span>
-    </div>
-</body>
+    <div class="street" lanes="7"></div>
+  </body>
 </html>
