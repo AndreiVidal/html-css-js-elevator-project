@@ -74,6 +74,7 @@ body {
   display: flex;
   flex: 1;
   gap: 15px;
+  width: 100%;
   justify-content: space-around;
   padding: 10px 15px 0;
 }
@@ -288,103 +289,43 @@ button.highlighted {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-  .main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: center;
-    min-height: 100vh;
-    overflow: visible;
-    padding-bottom: 0;
+@media screen and (max-width: 900px) {
+  .moon{
+    right: -20px;
   }
-
-  .content {
-    width: 60%;
-    min-width: 280px;
-    max-width: 380px;
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    padding: 8px;
-    padding-bottom: 0;
-    justify-content: center;
-  }
-
-  .structure {
-    width: 100%;
-    height: 80vh;
-    margin-bottom: 0;
-  }
-
   .control-panel {
-    position: static;
-    width: 30%;
-    min-width: 100px;
-    max-width: 140px;
-    margin: 0 8px;
-    padding: 8px;
+    width: 10%;
   }
-
+  
+  .display-panel {
+    display: flex;
+    font-size: 0.7rem;
+    height: 40px;
+    width: 50px;
+  }
+  
   .control-buttons {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
   }
-
+  
   .control-buttons button {
     height: 40px;
     width: 40px;
-    font-size: 1rem;
   }
-
-  .tree::before {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .tree::after {
-    height: 2rem;
-    width: 0.6rem;
-  }
-
-  .moon {
-    width: 50px;
-    height: 50px;
-    transform: translate(-10px, 20px);
-  }
-
-  .moon::before {
+}
+@media screen and (max-width: 475px){
+  .display-panel {
+    display: flex;
+    font-size: 0.5rem;
+    height: 30px;
     width: 40px;
-    height: 40px;
   }
 
-  .elevator {
-    width: 80%;
-    height: calc(100% / 7);
-  }
-
-  .window {
-    width: 35%;
-    height: 65%;
-  }
-
-  .door {
-    width: 25%;
-    height: 70%;
-  }
-
-  .street {
-    display: flex ;
-    width: 100% ;
-    height: 50px ;
-    min-height: 50px ;
-    margin-top: 0 ;
-    background-color: var(--bg-street) ;
-    border-top: 2px solid var(--border-default) ;
-    position: relative ;
-    z-index: 1 ;
-  }
-
-  .street > .lane {
-    height: 8px ;
+  .control-buttons button {
+    height: 30px;
+    width: 30px;
   }
 }
