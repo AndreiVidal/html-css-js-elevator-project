@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 :root {
   /* === Cores globais === */
   --bg-body: #141414;
@@ -49,7 +50,7 @@
   --tree-size: 4rem;
 }
 
-/* Reset e base */
+/* Reset base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +58,7 @@
 
 body {
   background-color: var(--bg-body);
+  font-family: "VT323", monospace;
   display: flex;
   flex-direction: column;
   height: 100vh;
