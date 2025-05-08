@@ -204,7 +204,6 @@ button.highlighted {
   border: 2px solid var(--border-dark);
   border-top: 4px solid var(--border-dark);
   bottom: 0;
-  height: calc(100% / 7);
   position: absolute;
   width: 80%;
 }
