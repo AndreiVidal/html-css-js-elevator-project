@@ -1,4 +1,5 @@
 (function () {
+  //----------------------------- Prédio
   function createdLobby() {
     const window = document.createElement("div");
     window.classList.add("window");
@@ -9,18 +10,6 @@
     lobby.appendChild(window);
 
     return lobby;
-  }
-  function getElevatorSize() {
-    const elevatorSize = document.querySelector('[floor="t"]');
-    return elevatorSize.offsetHeight + "px";
-  }
-
-  function createElevator() {
-    const buildingElevator = document.querySelector(".building-elevator");
-    const elevator = document.createElement("div");
-    elevator.classList.add("elevator");
-    elevator.style.height = getElevatorSize();
-    buildingElevator.appendChild(elevator);
   }
 
   function createdFloor(numberFloor) {
@@ -36,8 +25,6 @@
 
   function buildingFloor() {
     const elFloor = document.querySelectorAll("[floor]");
-    const controlButtons = document.querySelector(".control-buttons");
-    const qtd = +elFloor[0].getAttribute("floor");
 
     elFloor.forEach((el) => {
       const qtd = +el.getAttribute("floor");
@@ -49,5 +36,21 @@
   }
 
   buildingFloor();
+
+  //----------------------------- Elevador
+  function getElevatorSize() {
+    const elevatorSize = document.querySelector('[floor="t"]');
+    return elevatorSize.offsetHeight + "px";
+  }
+
+  function createElevator() {
+    const buildingElevator = document.querySelector(".building-elevator");
+    const elevator = document.createElement("div");
+    elevator.classList.add("elevator");
+    elevator.style.height = getElevatorSize();
+    elevator.style.bottom = "0px";
+    buildingElevator.appendChild(elevator);
+  }
+
   createElevator();
 })();
