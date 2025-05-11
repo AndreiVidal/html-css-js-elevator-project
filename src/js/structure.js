@@ -48,7 +48,6 @@
     const elevator = document.createElement("div");
     elevator.classList.add("elevator");
     elevator.style.height = getElevatorSize();
-    elevator.style.bottom = "0px";
     buildingElevator.appendChild(elevator);
   }
 
