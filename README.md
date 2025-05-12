@@ -30,5 +30,6 @@ Desenvolvido por **Andrei Vidal Godoi** como parte dos meus estudos no **Formaç
 
 ## 🌐 Links Úteis
 
+- [Link do projeto](https://andreividal.github.io/html-css-js-elevator-project/)
 - [Site do Repositório "App Ideas"](https://github.com/florinpop17/app-ideas)
 - [Cod3rs](https://www.cod3r.com.br/)
